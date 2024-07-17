@@ -1,44 +1,21 @@
 def create_tuple(*args):
-    """
-    Instead of returning 0, this method should Create a tuple from the given arguments and return that tuple.
-
-    :param args: The elements to include in the tuple.
-    :return: The created tuple.
-    """
+    return args
     return 0
 
 
 def access_element(my_tuple, index):
-    """
-    Instead of returing 0, this method should be able to
-      Access an element from the tuple at the given index and return it.
-
-    :param my_tuple: The tuple to access elements from.
-    :param index: The index of the element to access.
-    :return: The element at the given index.
-    """
+    return my_tuple[index]
     return 0
 
 
 def concatenate_tuples(tuple1, tuple2):
-    """
-    Instead of returning 0, this method Concatenate the two tuples and return the concatenated tuple.
-
-    :param tuple1: The first tuple.
-    :param tuple2: The second tuple.
-    :return: The concatenated tuple.
-    """
+    new_tuple=tuple1+tuple2
+    return new_tuple
     return 0
 
 
 def repeat_tuple(my_tuple, n):
-    """
-    Instead of returning 0, this method should Repeat the tuple n times and return the tuple.
-
-    :param my_tuple: The tuple to repeat.
-    :param n: The number of times to repeat the tuple.
-    :return: The repeated tuple.
-    """
+    return n*my_tuple
     return 0
 
 def check_membership(my_tuple, item):
