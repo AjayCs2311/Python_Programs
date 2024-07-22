@@ -1,36 +1,155 @@
 1. Check if a Given Key Already Exists in Dictionary
 Let’s begin with a simple question. If you have learned about Python dictionaries, you will know that you can check if a given key exists or not in multiple ways. Here’s one of them. 
-
+Ans: We can use the following methods
+     i)in
+    ii)get
+   iii)keys
 
 2. Handle Missing Keys in Dictionary
 Dictionary is a collection in python, where the data is stored in the form of a key-value pair, that is, it maps key to its value. Often, you will not know all the keys present in the dictionary and you might end up with a typing error which may lead to runtime error due to missing keys in the dictionary. So, how to deal with such situations?
+Ans: WE can use the following methods
+    i)get method
+   ii)setdefault
+  iii)try-except block
+   iv)collection.defaultdict
+
+
 
 3. Extract Unique Values in a Given Dictionary
-In a dictionary, the keys have to be unique, whereas the values can be duplicated. So, given a dictionary as shown below, how can you print all the unique values it has?
- 
+In a dictionary, the keys have to be unique, whereas the values can be duplicated. So, given a dictionary as shown below, how can you print all the unique values it 
+Ans: We can print the unique values by
+   i)Using a set to collect unique values
+  ii)Using a loop and set
+ iii)Using a list comprehension with set
+
+
+
 4. Print the Sum of Key Value Pairs in a Given Dictionary
 You need to create a list which has the sum of key-value pairs of a given dictionary. This can be done using a for loop and append() function. 
+Ans: 
+my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+sum_list = []
+for key, value in my_dict.items():
+    sum_list.append(ord(key) + value)  
+print(sum_list)
+
+
 
 5. Replace Dictionary Values From Other Dictionary
 Let’s say you are given two dictionaries. You need to write a python program that will replace the values in the first dictionary with the values from the second dictionary if the key is present in the second dictionary. 
 
 You can do this using dictionary comprehension or using loops. Here’s how you can do by using loops
-5. Update or Change the Keys in a Given Dictionary
+
+Ans: 
+dict1 = {'a': 1, 'b': 2, 'c': 3}
+dict2 = {'b': 20, 'c': 30, 'd': 40}
+for key in dict1.keys():
+    if key in dict2:
+        dict1[key] = dict2[key]
+print(dict1) 
+
+
+6. Update or Change the Keys in a Given Dictionary
 .You can do this in multiple ways as mentioned below:
 
 Using assignment operator
 Using pop() method
 Using zip() method
 
-6. Count the Frequency of List Items Using a Dictionary
+Ans:i)using assignment operator
+old_dict = {'a': 1, 'b': 2, 'c': 3}
+new_dict = {}
+for old_key in old_dict:
+    new_key = old_key.upper() 
+    new_dict[new_key] = old_dict[old_key]
+print(new_dict)  
+
+ii)using pop()
+old_dict = {'a': 1, 'b': 2, 'c': 3}
+old_dict['x'] = old_dict.pop('a')
+old_dict['y'] = old_dict.pop('b')
+print(old_dict)  
+
+iii)using zip()
+old_dict = {'a': 1, 'b': 2, 'c': 3}
+old_dict['x'] = old_dict.pop('a')
+old_dict['y'] = old_dict.pop('b')
+print(old_dict)  
+
+7. Count the Frequency of List Items Using a Dictionary
 You can solve this in many ways. Any ideas? Well, you can just use looping constructs or use the list() count method or you can start with an empty dictionary and use the dict.get() method. Probably many other ways!
+Ans:
+i)Using Looping Constructs
+my_list = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple']
+frequency = {}
+for item in my_list:
+    if item in frequency:
+        frequency[item] += 1
+    else:
+        frequency[item] = 1
+print(frequency)  
 
-7. Change the Value of a Key in Nested Dictionary
+ii)Using dict.get() Method
+my_list = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple']
+frequency = {}
+for item in my_list:
+    frequency[item] = frequency.get(item, 0) + 1
+print(frequency)  
+
+iii)Using collections.Counter
+from collections import Counter
+my_list = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple']
+frequency = Counter(my_list)
+print(frequency)  
+
+
+
+8. Change the Value of a Key in Nested Dictionary
 Given a nested dictionary, you need to write a program demonstrating how to change the value associated with a particular key of that dictionary. 
+Ans:
+i)Nested Dictionary
+nested_dict = {
+    'dict1': {'key1': 1, 'key2': 2},
+    'dict2': {'key1': 3, 'key2': 4},
+    'dict3': {'key1': 5, 'key2': 6}
+}
 
-8. Get Keys with Maximum and Minimum Value in a Dictionary
+ii)Value Using Direct Access
+nested_dict = {
+    'dict1': {'key1': 1, 'key2': 2},
+    'dict2': {'key1': 3, 'key2': 4},
+    'dict3': {'key1': 5, 'key2': 6}
+}
+nested_dict['dict2']['key2'] = 40
+print(nested_dict)
+
+
+
+9. Get Keys with Maximum and Minimum Value in a Dictionary
 We are going to use max(n1, n2, n3, …[, key=func]) and min(n1, n2, n3, …[, key=func]) functions and assign a lambda function to the ‘key’ parameter to check for max and min values.
+Ans:
+my_dict = {'a': 10, 'b': 20, 'c': 5, 'd': 15}
+max_key = max(my_dict, key=lambda k: my_dict[k])
+print(f"Key with the maximum value: {max_key} (Value: {my_dict[max_key]})")
+min_key = min(my_dict, key=lambda k: my_dict[k])
+print(f"Key with the minimum value: {min_key} (Value: {my_dict[min_key]})")
 
-9. Check if the Substring Matches Any Key in a Dictionary
+
+10. Check if the Substring Matches Any Key in a Dictionary
 Often you might just know a specific part of the key and using this you have to fetch the associated value. So, you need to check if there exists any key which has the substring that you are searching for. If yes, then print the values associated with those keys. This can be achieved in multiple ways. 
-
+Ans:my_dict = {
+    'apple_pie': 10,
+    'banana_split': 20,
+    'apple_tart': 15,
+    'cherry_cake': 25
+}
+substring = 'apple'
+ii)Using Loop
+print("Using Loop:")
+for key in my_dict:
+    if substring in key:
+        print(f"Key: {key}, Value: {my_dict[key]}")
+i)Using Dictionary Comprehension
+print("\nUsing Dictionary Comprehension:")
+filtered_dict = {key: value for key, value in my_dict.items() if substring in key}
+print(filtered_dict)
